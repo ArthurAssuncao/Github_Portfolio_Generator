@@ -9,6 +9,14 @@ Gera portfólio com os projetos públicos hospedados no Github.
 * Adicione o js do JQuery ao arquivo html;
 * Crie uma `div` com o id `github-gpg-repos`;
 * Adicione o css e js do Github Portfolio Generator ao arquivo html;
+* Crie uma tag script com o seguinte código:
+<pre>
+$(document).ready(function() {
+        $.GithubPortfolioGenerator({
+            'user' : 'YourUserName',
+        });
+    });
+</pre>
 * Enjoy it!
 
 ###Código de exemplo
@@ -26,9 +34,18 @@ Gera portfólio com os projetos públicos hospedados no Github.
     </head>
     <body>
         <div id="github-gpg-repos"></div>
+
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script type="text/javascript" src="github_portfolio_generator.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $.GithubPortfolioGenerator({
+                'user' : 'ArthurAssuncao',
+            });
+        });
+        </script>
     </body>
 </html>
+
 
 ```
