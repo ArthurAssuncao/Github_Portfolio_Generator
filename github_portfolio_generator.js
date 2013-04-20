@@ -3,19 +3,19 @@ function generate_projects(config, slide_direction){
     css_class = css_class ? css_class : '';
     $.getJSON('https://api.github.com/users/' + config.user + '/repos?&sort=updated', function(resp) {
         if (resp.length > 0) {
-            $(config.div_id).append('<ul id="project-gpg-list" class="unstyled"></ul>');
+            $(config.element_id).append('<ul id="project-gpg-list" class="unstyled"></ul>');
             $.each(resp, function(i, repositorio) {
                 if($.inArray(repositorio['name'], config.exclude_list) == -1){
                     var tag_name = '<h2 class="project-gpg-name">' + repositorio['name'] + '</h2>';
                     var tag_language = '<h3 class="project-gpg-language muted">' + ((repositorio['language']) ? repositorio['language'] : '') + '</h3>';
                     var tag_description = '<p class="project-gpg-description ' + (css_class ? 'project-gpg-description-caption' : '') +'">' + ((repositorio['description']) ? repositorio['description'] : '') + '</p>';
                     var tag_li = '<li class="github-gpg-project github-gpg-sombra ' + css_class + (css_class ? ' github-gpg-project-slide' : '') +' well span3"><a href="' + repositorio['html_url'] + '">' + tag_name + tag_language + tag_description + '</a></li>';
-                    $(config.div_id).append(tag_li);
+                    $(config.element_id).append(tag_li);
                 }
             });
         }
         else {
-            $(config.div_id).append('<p>No public repositories.</p>');
+            $(config.element_id).append('<p>No public repositories.</p>');
         }
     });
 }
@@ -47,7 +47,7 @@ function class_slide(slide_direction){
     $.GithubPortfolioGenerator = function(settings){
         var config = {
             'user': 'ArthurAssuncao',
-            'div_id' : '#github-gpg-repos',
+            'element_id' : '#github-gpg-repos',
             'slide_direction' : null,
             'exclude_list' : new Array(),
         };
