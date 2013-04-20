@@ -15,14 +15,16 @@ Gera portfólio com os projetos públicos hospedados no Github.
 <pre>
 $(document).ready(function() {
         $.GithubPortfolioGenerator(options);
-    });
+});
 </pre>
 * Enjoy it!
 
 ###Opções
-`user`, um nome de usuário no Github.<br>
-`slide_direction`, direção do slide caption, pode ser `top`, `bottom`, `left`, `right` ou qualquer outro valor para não usar o slide caption e mostrar os textos ao carregar o projeto.<br>
-`exclude_list`, lista de projetos que não serão exibidos.
+`user`, um nome de usuário no Github, `default` é 'ArthurAssuncao'.<br>
+`element_id`, id do elemento onde serão inseridos os projetos, `default` é '#github-gpg-repos'.
+`slide_direction`, direção do slide caption, pode ser `top`, `bottom`, `left`, `right` ou qualquer outro valor para não usar o slide caption e mostrar os textos ao carregar o projeto, `default` é `null`.<br>
+`show_forks`, `true` para exibir os forks e `false` para não exibir, `default` é `true`.
+`exclude_list`, lista de projetos que não serão exibidos, `default` é um Array vazio.
 
 ###Código de exemplo
 ```html
@@ -39,20 +41,20 @@ $(document).ready(function() {
     </head>
     <body>
         <div id="github-gpg-repos"></div>
-
+        
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script type="text/javascript" src="github_portfolio_generator.js"></script>
         <script type="text/javascript">
         $(document).ready(function() {
             $.GithubPortfolioGenerator({
                 'user' : 'ArthurAssuncao',
+                'element_id' : '#github-gpg-repos',
                 'slide_direction' : 'bottom',
+                'show_forks' : true,
                 'exclude_list' : ['excluded_project'],
             });
         });
         </script>
     </body>
 </html>
-
-
 ```
