@@ -1,4 +1,4 @@
-Github_Portfolio_Generator
+Github Portfolio Generator
 ==========================
 
-Gera portfólio com os projetos públicos hospedados no Github
+Gera portfólio com os projetos públicos hospedados no Github.
