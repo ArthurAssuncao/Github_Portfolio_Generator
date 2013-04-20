@@ -21,9 +21,9 @@ $(document).ready(function() {
 
 ###Opções
 `user`, um nome de usuário no Github, `default` é 'ArthurAssuncao'.<br>
-`element_id`, id do elemento onde serão inseridos os projetos, `default` é '#github-gpg-repos'.
+`element_id`, id do elemento onde serão inseridos os projetos, `default` é '#github-gpg-repos'.<br>
 `slide_direction`, direção do slide caption, pode ser `top`, `bottom`, `left`, `right` ou qualquer outro valor para não usar o slide caption e mostrar os textos ao carregar o projeto, `default` é `null`.<br>
-`show_forks`, `true` para exibir os forks e `false` para não exibir, `default` é `true`.
+`show_forks`, `true` para exibir os forks e `false` para não exibir, `default` é `true`.<br>
 `exclude_list`, lista de projetos que não serão exibidos, `default` é um Array vazio.
 
 ###Código de exemplo
