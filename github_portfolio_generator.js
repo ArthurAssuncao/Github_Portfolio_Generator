@@ -24,8 +24,6 @@ function generate_projects(user){
             'user': 'ArthurAssuncao',
         };
         if (settings){$.extend(config, settings);}
-        console.log(config);
-        console.log(settings);
         generate_projects(config.user);
 
         return this;
