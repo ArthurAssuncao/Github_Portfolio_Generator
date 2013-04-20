@@ -3,6 +3,8 @@ Github Portfolio Generator
 
 Gera portfólio com os projetos públicos hospedados no Github.
 
+[Demo](http://github.arthurassuncao.com)
+
 ###Como usar
 * Crie um arquivo html;
 * Adicione o css do Twitter Bootstrap e o css do Twitter Bootstrap Responsive ao arquivo html;
