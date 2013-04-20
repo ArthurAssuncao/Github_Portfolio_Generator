@@ -14,12 +14,15 @@ Gera portfólio com os projetos públicos hospedados no Github.
 * Crie uma tag script com o seguinte código:
 <pre>
 $(document).ready(function() {
-        $.GithubPortfolioGenerator({
-            'user' : 'YourUserName',
-        });
+        $.GithubPortfolioGenerator(options);
     });
 </pre>
 * Enjoy it!
+
+###Opções
+`user`, um nome de usuário no Github.<br>
+`slide_direction`, direção do slide caption, pode ser `top`, `bottom`, `left`, `right` ou qualquer outro valor para não usar o slide caption e mostrar os textos ao carregar o projeto.<br>
+`exclude_list`, lista de projetos que não serão exibidos.
 
 ###Código de exemplo
 ```html
@@ -43,6 +46,8 @@ $(document).ready(function() {
         $(document).ready(function() {
             $.GithubPortfolioGenerator({
                 'user' : 'ArthurAssuncao',
+                'slide_direction' : 'bottom',
+                'exclude_list' : ['excluded_project'],
             });
         });
         </script>
