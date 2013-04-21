@@ -14,16 +14,16 @@ Gera portfólio com os projetos públicos hospedados no Github.
 * Crie uma tag script com o seguinte código:
 <pre>
 $(document).ready(function() {
-        $.GithubPortfolioGenerator(options);
+        new GithubPortfolioGenerator(options);
 });
 </pre>
 * Enjoy it!
 
 ###Opções
 `user`, um nome de usuário no Github, `default` é 'ArthurAssuncao'.<br>
-`element_id`, id do elemento onde serão inseridos os projetos, `default` é '#github-gpg-repos'.
+`dom_node`, nó do DOM ou id do elemento onde serão inseridos os projetos, `default` é `body`.<br>
 `slide_direction`, direção do slide caption, pode ser `top`, `bottom`, `left`, `right` ou qualquer outro valor para não usar o slide caption e mostrar os textos ao carregar o projeto, `default` é `null`.<br>
-`show_forks`, `true` para exibir os forks e `false` para não exibir, `default` é `true`.
+`show_forks`, `true` para exibir os forks e `false` para não exibir, `default` é `true`.<br>
 `exclude_list`, lista de projetos que não serão exibidos, `default` é um Array vazio.
 
 ###Código de exemplo
@@ -46,12 +46,12 @@ $(document).ready(function() {
         <script type="text/javascript" src="github_portfolio_generator.js"></script>
         <script type="text/javascript">
         $(document).ready(function() {
-            $.GithubPortfolioGenerator({
-                'user' : 'ArthurAssuncao',
-                'element_id' : '#github-gpg-repos',
-                'slide_direction' : 'bottom',
-                'show_forks' : true,
-                'exclude_list' : ['excluded_project'],
+            new GithubPortfolioGenerator({
+                user : 'ArthurAssuncao',             // any github username
+                dom_node : '#github-gpg-repos',      // (optional) domNode to attach to or element id
+                slide_direction : 'bottom',          // (optional) slide direction, null by default
+                show_forks : true,                   // (optional) show forked repos, true by default
+                exclude_list : ['excluded_project']  // (optional) list excluded repos
             });
         });
         </script>
