@@ -20,7 +20,7 @@ $(document).ready(function() {
 * Enjoy it!
 
 ###Opções
-`user`, um nome de usuário no Github, `default` é 'ArthurAssuncao'.<br>
+`user`, um nome de usuário no Github, opção obrigatória.<br>
 `dom_node`, nó do DOM ou id do elemento onde serão inseridos os projetos, `default` é `body`.<br>
 `slide_direction`, direção do slide caption, pode ser `top`, `bottom`, `left`, `right` ou qualquer outro valor para não usar o slide caption e mostrar os textos ao carregar o projeto, `default` é `null`.<br>
 `show_forks`, `true` para exibir os forks e `false` para não exibir, `default` é `true`.<br>
