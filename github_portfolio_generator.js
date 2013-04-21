@@ -8,7 +8,7 @@ var GithubPortfolioGenerator = (function (args) {
         else{
             // Parameters
             this.user            = args.user;
-            this.element_id      = args.element_id ? args.element_id : document.body;
+            this.dom_node      = args.dom_node ? args.dom_node : document.body;
             this.slide_direction = args.slide_direction;
             this.showForks       = args.showForks==false ? false : true;
             this.exclude_list    = (args.exclude_list instanceof Array) ? args.exclude_list : new Array();
@@ -69,7 +69,7 @@ var GithubPortfolioGenerator = (function (args) {
                 var classThis = this;
                 $.getJSON('https://api.github.com/users/' + this.user + '/repos?&sort=updated', function(resp) {
                     if (resp.length > 0) {
-                        $(classThis.element_id).append('<ul id="project-gpg-list" class="unstyled"></ul>');
+                        $(classThis.dom_node).append('<ul id="project-gpg-list" class="unstyled"></ul>');
                         $.each(resp, function(i, repositorio) {
                             if($.inArray(repositorio['name'], classThis.exclude_list) == -1){
                                 if(classThis.show_forks || !repositorio['fork']){
@@ -80,7 +80,7 @@ var GithubPortfolioGenerator = (function (args) {
                         });
                     }
                     else {
-                        $(classThis.element_id).append('<p>No public repositories.</p>');
+                        $(classThis.dom_node).append('<p>No public repositories.</p>');
                     }
                 });
             },
