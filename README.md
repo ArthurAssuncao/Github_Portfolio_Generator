@@ -48,7 +48,7 @@ $(document).ready(function() {
         $(document).ready(function() {
             new GithubPortfolioGenerator({
                 user : 'ArthurAssuncao',             // any github username
-                dom_node : '#github-gpg-repos',      // (optional) domNode to attach to or element id
+                dom_node : '#github-gpg-repos',      // (optional) dom_node to attach to or element id, body by default
                 slide_direction : 'bottom',          // (optional) slide direction, null by default
                 show_forks : true,                   // (optional) show forked repos, true by default
                 exclude_list : ['excluded_project']  // (optional) list excluded repos
