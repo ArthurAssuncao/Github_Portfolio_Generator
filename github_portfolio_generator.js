@@ -8,7 +8,7 @@ var GithubPortfolioGenerator = (function (args) {
         else{
             // Parameters
             this.user            = args.user;
-            this.dom_node      = args.dom_node ? args.dom_node : document.body;
+            this.dom_node        = args.dom_node ? args.dom_node : document.body;
             this.slide_direction = args.slide_direction;
             this.showForks       = args.showForks==false ? false : true;
             this.exclude_list    = (args.exclude_list instanceof Array) ? args.exclude_list : new Array();
@@ -82,15 +82,16 @@ var GithubPortfolioGenerator = (function (args) {
                         });
                     }
                     else {
-                        $(classThis.dom_node).append('<p>No public repositories.</p>');
+                        $(classThis.dom_node).append('<h3 class="gpg-no-repositories">No public repositories.</h3>');
                     }
                 });
             },
 
             // Bind, for browsers not supporting it by default
             bind : function (oThis){
-                if (typeof this !== "function")
-                  throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
+                if (typeof this !== "function"){
+                    throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
+                }
                 var aArgs = Array.prototype.slice.call(arguments, 1), 
                     fToBind = this, fNOP = function () {},
                     fBound = function () {
