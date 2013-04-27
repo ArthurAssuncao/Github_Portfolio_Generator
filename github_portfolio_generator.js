@@ -10,7 +10,7 @@ var GithubPortfolioGenerator = (function (args) {
             this.user            = args.user;
             this.dom_node        = args.dom_node ? args.dom_node : document.body;
             this.slide_direction = args.slide_direction;
-            this.showForks       = args.showForks==false ? false : true;
+            this.show_forks       = args.show_forks==false ? false : true;
             this.exclude_list    = (args.exclude_list instanceof Array) ? args.exclude_list : new Array();
             this.repos           = [];
 
