@@ -10,9 +10,10 @@ var GithubPortfolioGenerator = (function (args) {
             this.user            = args.user;
             this.dom_node        = args.dom_node ? args.dom_node : document.body;
             this.slide_direction = args.slide_direction;
-            this.show_forks       = args.show_forks==false ? false : true;
+            this.show_forks      = args.show_forks == false ? false : true;
             this.exclude_list    = (args.exclude_list instanceof Array) ? args.exclude_list : new Array();
             this.repos           = [];
+            this.space_char  = args.space_char ? args.space_char : null;
 
             // Make sure bind() is a function
             if (!Function.prototype.bind){
@@ -33,7 +34,8 @@ var GithubPortfolioGenerator = (function (args) {
             },
 
             create_project_element : function(repositorio, class_slide_direction){
-                var tag_name = '<h2 class="project-gpg-name">' + repositorio['name'] + '</h2>';
+                var regexSpaceChar = new RegExp(this.space_char, 'g');
+                var tag_name = '<h2 class="project-gpg-name">' + (this.space_char === null ? repositorio['name'] : repositorio['name'].replace(regexSpaceChar, " ") ) + '</h2>';
                 var tag_language = '<h3 class="project-gpg-language muted">' + ((repositorio['language']) ? repositorio['language'] : '') + '</h3>';
                 var github_button_star = '<li><span class="btn btn-mini"><i class="icon-star"></i> stars</span> <span class="github-gpg-count">' + repositorio['watchers'] + '</span></li>';
                 var github_button_fork = '<li><span class="btn btn-mini"><i class="icon-random"></i> forks</span> <span class="github-gpg-count">' + repositorio['forks'] + '</span></li>';
