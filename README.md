@@ -24,7 +24,8 @@ $(document).ready(function() {
 `dom_node`, nó do DOM ou id do elemento onde serão inseridos os projetos, `default` é `body`.<br>
 `slide_direction`, direção do slide caption, pode ser `top`, `bottom`, `left`, `right` ou qualquer outro valor para não usar o slide caption e mostrar os textos ao carregar o projeto, `default` é `null`.<br>
 `show_forks`, `true` para exibir os forks e `false` para não exibir, `default` é `true`.<br>
-`exclude_list`, lista de projetos que não serão exibidos, `default` é um Array vazio.
+`exclude_list`, lista de projetos que não serão exibidos, `default` é um Array vazio.<br>
+`space_char`, caracter usado como espaço em seus projetos, como o underline para serparar as palavras, esse caracter será substituido por espaço.
 
 ###Código de exemplo
 ```html
@@ -47,11 +48,12 @@ $(document).ready(function() {
         <script type="text/javascript">
         $(document).ready(function() {
             new GithubPortfolioGenerator({
-                user : 'ArthurAssuncao',             // any github username
-                dom_node : '#github-gpg-repos',      // (optional) dom_node to attach to or element id, body by default
-                slide_direction : 'bottom',          // (optional) slide direction, null by default
-                show_forks : true,                   // (optional) show forked repos, true by default
-                exclude_list : ['excluded_project']  // (optional) list excluded repos
+                user : 'ArthurAssuncao',              // any github username
+                dom_node : '#github-gpg-repos',       // (optional) dom_node to attach to or element id, body by default
+                slide_direction : 'bottom',           // (optional) slide direction, null by default
+                show_forks : true,                    // (optional) show forked repos, true by default
+                exclude_list : ['excluded_project'],  // (optional) list excluded repos
+                space_char : "_"                      // (optional) separator character, it's substituted by space
             });
         });
         </script>
